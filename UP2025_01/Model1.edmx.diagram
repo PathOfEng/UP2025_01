@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d535e00418414999a1b6227da2c9b719" Name="Diagram1">
+        <EntityTypeShape EntityType="laboratoryModel.sysdiagram" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.Анализатор_" Width="1.5" PointX="10.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.заказ_" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.история_входа_" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.подробности_заказа_" Width="1.5" PointX="10.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.подробности_заказа_анализатор_" Width="1.5" PointX="12.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.пользователи_" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.работа_бухгалтера_" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.роль_" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.статус_входа_" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.статус_заказа_" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.статус_услуги_" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.страховая_компания_" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.тип_полиса_" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="laboratoryModel.услуги_" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="laboratoryModel.FK_подробности_заказа_анализатор__Анализатор_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_заказ__пользователи_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_заказ__статус_заказа_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_подробности_заказа__заказ_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_история_входа__пользователи_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_история_входа__статус_входа_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_подробности_заказа__статус_услуги_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_подробности_заказа__услуги_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_подробности_заказа_анализатор__подробности_заказа_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_подробности_заказа_анализатор__пользователи_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_пользователи__Роль_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_пользователи__страховая_компания_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_пользователи__тип_полиса_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_работа_бухгалтера__пользователи_" ManuallyRouted="false" />
+        <AssociationConnector Association="laboratoryModel.FK_работа_бухгалтера__страховая_компания_" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

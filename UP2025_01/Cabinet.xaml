@@ -1,0 +1,326 @@
+﻿<Window x:Class="UP2025_01.Cabinet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP2025_01"
+        mc:Ignorable="d" Name="apex"
+        Title="Cabinet" Height="700" Width="800" FontSize="24" Background="#98FB98" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image Name="avatar" Grid.Column="4" Grid.RowSpan="2" Stretch="Fill"/>
+        <Label Name="FIO" Grid.ColumnSpan="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <Label Name="role" Grid.Row="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <Button Name="inTheMainWindow" Grid.Column="3" Background="red" Content="На главную" Click="inTheMainWindow_Click">
+
+        </Button>
+        <TabControl Grid.Row="2" Grid.RowSpan="7" Grid.ColumnSpan="5">
+            <TabItem Name="order_tab" Header="Сформировать заказ">
+                <Grid Name="order_tab_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <!--Интерфейс обычного лаборанта-->
+
+                    <!--Создание заказа(Добавление биоматериала)-->
+                    <Label Content="Пациент: " Grid.Row="0" HorizontalAlignment="Right"/>
+                    <ComboBox Name="lb1_patient" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" DisplayMemberPath="наименование" SelectionChanged="lb1_patient_SelectionChanged" />
+
+                    <Label Name="lb1_service_label" Content="Услуга: " Grid.Row="1" HorizontalAlignment="Right"/>
+                    <ComboBox Name="lb1_service" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" DisplayMemberPath="наименование" SelectionChanged="lb1_service_SelectionChanged" />
+
+                    <Button Name="lb1_add_order" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Content="Сформировать заказ" Click="lb1_add_order_Click">
+
+                    </Button>
+
+                    <Button Name="lb1_add_service" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Background="Green" Content="Добавить услугу" Click="lb1_add_service_Click">
+
+                    </Button>
+
+
+
+                    <DataGrid Name="lb1_serviceGrid" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="услуга" Binding="{Binding Path=наименование}">
+
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="*" Header="стоимость" Binding="{Binding Path=стоимость}">
+
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="reports_tab" Header="Просмотр отчетов">
+                <Grid Name="reports_tab_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Name="analisator_job" Header="Работа с анализатором">
+                <Grid Name="analisator_job_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <ProgressBar Name="barProgressLedetect" Grid.Column="1" Grid.ColumnSpan="3" Width="475" Background="Gray"  HorizontalAlignment="Left" Grid.Row="6" Minimum="0" Maximum="30"/>
+                    <ProgressBar Name="barProgressBiorad" Grid.Column="1" Grid.ColumnSpan="3" Width="475" Background="Gray"  HorizontalAlignment="Left" Grid.Row="6" Minimum="0" Maximum="30"/>
+                    <ComboBox Name="analizatorsComboBox" DisplayMemberPath="наименование" Grid.ColumnSpan="5" SelectionChanged="analizatorsComboBox_SelectionChanged" />
+                    <DataGrid Name="AnalizatorDataGrid" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="5" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Код исследования" Binding="{Binding подробности_заказа_.код}">
+                                
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Название" Binding="{Binding подробности_заказа_.услуги_.наименование}">
+                                
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Пациент" Binding="{Binding подробности_заказа_.заказ_.пользователи_.наименование}">
+
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding подробности_заказа_.статус_услуги_.наименование}">
+                                
+                            </DataGridTextColumn>
+                            <DataGridCheckBoxColumn Binding="{Binding Path=isSelected}" Header="Выбрать" MinWidth="40">
+                                
+                            </DataGridCheckBoxColumn>
+                            <!--<DataGridTemplateColumn x:Name="ddd" Width="*" Header="Проверить">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Viewbox Height="20">
+                                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Uid="asd" x:Name="toAnalyze" FontSize="24"/>
+                                        </Viewbox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Name="SendToCheck" Content="Проверить" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Background="Green" Click="SendToCheck_Click">
+                        
+                    </Button> 
+                </Grid>
+            </TabItem>
+            <TabItem Name="create_insurance" Header="Формирование счета страховой компании">
+                <Grid Name="create_insurance_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Name="create_report_tab" Header="Сформировать отчет">
+                <Grid Name="create_report_tab_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Name="users_tab" Header="История пользователей">
+                <Grid Name="users_tab_grid"  Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Фильтр по логину:" Grid.ColumnSpan="2" />
+                    <TextBox Name="userBox" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="2" SelectionChanged="userComboBox_SelectionChanged"/>
+
+                    <DataGrid Name="adm_users_grid" Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="5" AutoGenerateColumns="False" Sorting="adm_users_grid_Sorting">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="1*" Header="логин" Binding="{Binding пользователи_.логин}">
+                                
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Width="1*"  Header="ip" Binding="{Binding Path=ip}">
+                                
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Дата и время" Binding="{Binding Path=Дата}">
+
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Width="1*" Header="Статус" Binding="{Binding статус_входа_.наименование}">
+
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="supplies_tab" Header="Расходные материалы">
+                <Grid Name="supplies_tab_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Name="graphics_tab" Header="Графики">
+                <Grid Name="graphics_tab_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Name="add_user_tab" Header="Добавление новых сотрудников">
+                <Grid Name="add_user_tab_grid" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="ФИО:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Name="new_fio" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" VerticalAlignment="Center" MaxLength="100"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="Логин:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Name="login" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" VerticalAlignment="Center" MaxLength="50"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="Пароль:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Name="password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" VerticalAlignment="Center" MaxLength="50"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Content="Телефон:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Name="telephoneNumber" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" VerticalAlignment="Center" MaxLength="11"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Content="Должность:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <ComboBox DisplayMemberPath="наименование" Name="roles" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center"/>
+
+                    <Label Grid.Row="5" Grid.Column="0" Content="E-mail:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox Name="email" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" VerticalAlignment="Center"/>
+
+                    <Button Name="AddEmployeeToDB" Grid.Row="6" Grid.ColumnSpan="5" Content="Добавить сотрудника" Background="Green" Click="AddPatienToDB_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="UP2025_01.AddPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP2025_01"
+        mc:Ignorable="d"
+        Title="Patient Window" Height="600" Width="800" FontSize="24" Background="#98FB98">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Content="ЗАПОЛНИТЕ ВСЕ ПОЛЯ, ЧТОБЫ ДОБАВИТЬ ПАЦИЕНТА" Grid.ColumnSpan="3" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="ФИО:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="FIO" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center" MaxLength="100"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Логин:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="login" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center" MaxLength="50"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Пароль:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="password" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center" MaxLength="50"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Дата рождения:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <DatePicker Name="dateBorn" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Паспорт:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="passport" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center" MaxLength="10"/>
+
+        <Label Grid.Row="6" Grid.Column="0" Content="Телефон:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="telephoneNumber" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center" MaxLength="11"/>
+
+        <Label Grid.Row="7" Grid.Column="0" Content="Страховая компания:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <ComboBox DisplayMemberPath="наименование" Name="companies" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="8" Grid.Column="0" Content="Тип полиса:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <ComboBox DisplayMemberPath="наименование" Name="policyType" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="9" Grid.Column="0" Content="Номер полиса:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="policyNumber" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="10" Grid.Column="0" Content="E-mail:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Name="email" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" VerticalAlignment="Center"/>
+
+        <Button Name="AddPatienToDB" Grid.Row="11" Grid.ColumnSpan="3" Content="Добавить пациента" Background="Green" Click="AddPatienToDB_Click"/>
+
+
+
+
+
+    </Grid>
+
+
+
+</Window>

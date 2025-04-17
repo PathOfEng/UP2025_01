@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UP2025_01
+{
+    public class Services
+    {
+        public int serviceCode { get; set; }
+        public string result { get; set; }
+
+    }
+}
